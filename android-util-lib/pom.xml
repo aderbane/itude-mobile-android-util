@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.itude.mobile.android.util</groupId>
+		<artifactId>android-util</artifactId>
+		<version>0.0.1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>android-util-lib</artifactId>
+	<packaging>apklib</packaging>
+	<name>Itude Mobile Android Util Library</name>
+	<description>Itude Mobile Android Util Library</description>
+	<url>http://www.itude.com</url>
+	<inceptionYear>2013</inceptionYear>
+	<developers>
+		<developer>
+			<name>Coen Houtman</name>
+			<id>c.houtman</id>
+			<roles>
+				<role>Developer</role>
+				<role>Contributor</role>
+			</roles>
+		</developer>
+	</developers>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+		</dependency>
+		<dependency>
+           	<groupId>com.google.android.compatibility</groupId>
+           	<artifactId>android-support</artifactId>
+       	</dependency>
+       	<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+	</dependencies>
+
+<!-- 	<scm>
+		<connection>scm:git:git@127.0.0.1:itude-mobile-android-mobbl.git/core-test</connection>
+		<developerConnection>scm:git:git@127.0.0.1:itude-mobile-android-mobbl.git/core-test</developerConnection>
+		<url>scm:git:git@127.0.0.1:itude-mobile-android-mobbl.git/core-test</url>
+	</scm>
+ -->
+ 
+ 	<build>
+		<defaultGoal>install</defaultGoal>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<sourceDirectory>src</sourceDirectory> 
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+
+
+          

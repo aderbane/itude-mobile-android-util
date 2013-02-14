@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.itude.mobile.android.util.tests"
+    android:versionCode="1"
+    android:versionName="0.0.1.0-SNAPSHOT" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="Tests for the util project."
+        android:targetPackage="com.itude.mobile.android.util.tests" />
+
+    <application android:debuggable="true" >
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+</manifest>
