@@ -11,7 +11,7 @@ import android.util.Log;
 
 import com.itude.mobile.android.util.exceptions.DateParsingException;
 
-public final class DateUtilities
+public final class DateUtil
 {
   private static final String                        TAG                    = "DateUtilities";
 
@@ -25,7 +25,7 @@ public final class DateUtilities
                                                                               }
                                                                             };
 
-  private DateUtilities()
+  private DateUtil()
   {
   }
 
