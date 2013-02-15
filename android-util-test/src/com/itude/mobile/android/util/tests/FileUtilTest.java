@@ -8,7 +8,7 @@ import android.test.AndroidTestCase;
 
 import com.itude.mobile.android.util.AssetUtil;
 import com.itude.mobile.android.util.FileUtil;
-import com.itude.mobile.android.util.exceptions.MBDataParsingException;
+import com.itude.mobile.android.util.exceptions.DataParsingException;
 
 public class FileUtilTest extends AndroidTestCase
 {
@@ -96,7 +96,7 @@ public class FileUtilTest extends AndroidTestCase
       result = FileUtil.getInstance().getByteArray(filePath);
       fail("Content of file could be read, thus it has not been removed");
     }
-    catch (MBDataParsingException e)
+    catch (DataParsingException e)
     {
       //expected behavior.
     }
