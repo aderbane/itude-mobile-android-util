@@ -65,13 +65,11 @@
         </profile>
     </profiles>
    
-	<!--
    	<scm>
-		<connection>scm:git:git@127.0.0.1:itude-mobile-android-mobbl.git</connection>
-		<developerConnection>scm:git:git@127.0.0.1:itude-mobile-android-mobbl.git</developerConnection>
-		<url>scm:git:git@127.0.0.1:itude-mobile-android-mobbl.git</url>
+		<connection>scm:git:git@127.0.0.1:itude-mobile-android-util.git</connection>
+		<developerConnection>scm:git:git@127.0.0.1:itude-mobile-android-util.git</developerConnection>
+		<url>scm:git:git@127.0.0.1:itude-mobile-android-util.git</url>
 	</scm>
-	-->
 	
 	<build>
         <pluginManagement>
