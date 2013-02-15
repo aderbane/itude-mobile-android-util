@@ -14,7 +14,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.Log;
 
-import com.itude.mobile.android.util.exceptions.MBDataParsingException;
+import com.itude.mobile.android.util.exceptions.DataParsingException;
 
 public final class FileUtil
 {
@@ -42,7 +42,7 @@ public final class FileUtil
     _context = context;
   }
 
-  public byte[] getByteArray(String fileName) throws MBDataParsingException
+  public byte[] getByteArray(String fileName) throws DataParsingException
   {
     FileInputStream fis = null;
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -63,7 +63,7 @@ public final class FileUtil
     catch (Exception e)
     {
       String message = "FileUtil.getByteArray: unable to read file data from filename " + fileName;
-      throw new MBDataParsingException(message, e);
+      throw new DataParsingException(message, e);
     }
     finally
     {

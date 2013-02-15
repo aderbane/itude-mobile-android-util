@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
-import com.itude.mobile.android.util.exceptions.MBDataParsingException;
+import com.itude.mobile.android.util.exceptions.DataParsingException;
 
 public final class AssetUtil
 {
@@ -34,7 +34,7 @@ public final class AssetUtil
     _context = context;
   }
 
-  public byte[] getByteArray(String fileName) throws MBDataParsingException
+  public byte[] getByteArray(String fileName) throws DataParsingException
   {
     AssetManager manager = _context.getAssets();
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -57,7 +57,7 @@ public final class AssetUtil
     catch (Exception e)
     {
       String message = "AssetUtil.getByteArray: unable to read asset data with filename " + fileName;
-      throw new MBDataParsingException(message, e);
+      throw new DataParsingException(message, e);
     }
     finally
     {

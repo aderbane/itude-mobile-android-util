@@ -9,7 +9,7 @@ import java.util.Locale;
 
 import android.util.Log;
 
-import com.itude.mobile.android.util.exceptions.MBDateParsingException;
+import com.itude.mobile.android.util.exceptions.DateParsingException;
 
 public final class DateUtilities
 {
@@ -65,7 +65,7 @@ public final class DateUtilities
     }
     catch (Exception e)
     {
-      throw new MBDateParsingException("Could not get format date depending on current date with input string: " + dateString, e);
+      throw new DateParsingException("Could not get format date depending on current date with input string: " + dateString, e);
     }
   }
 
@@ -85,7 +85,7 @@ public final class DateUtilities
     }
     catch (Exception e)
     {
-      throw new MBDateParsingException("Could not parse date from xml value: " + stringToFormat, e);
+      throw new DateParsingException("Could not parse date from xml value: " + stringToFormat, e);
     }
   }
 
@@ -104,7 +104,7 @@ public final class DateUtilities
       }
       catch (Exception e)
       {
-        throw new MBDateParsingException("Could not parse date from xml value: " + stringToFormat, e);
+        throw new DateParsingException("Could not parse date from xml value: " + stringToFormat, e);
       }
     }
     return value;
@@ -122,7 +122,7 @@ public final class DateUtilities
       }
       catch (Exception e)
       {
-        throw new MBDateParsingException("Could not parse date from value: " + stringToFormat, e);
+        throw new DateParsingException("Could not parse date from value: " + stringToFormat, e);
       }
     }
     return value;
@@ -137,7 +137,7 @@ public final class DateUtilities
     }
     catch (Exception e)
     {
-      throw new MBDateParsingException("Could not get year from value: " + date.getYear(), e);
+      throw new DateParsingException("Could not get year from value: " + date.getYear(), e);
     }
   }
 
@@ -166,7 +166,7 @@ public final class DateUtilities
       }
       catch (Exception e)
       {
-        throw new MBDateParsingException("Could not parse date from xml value: " + stringToFormat, e);
+        throw new DateParsingException("Could not parse date from xml value: " + stringToFormat, e);
       }
     }
   }
@@ -187,7 +187,7 @@ public final class DateUtilities
     }
     catch (Exception e)
     {
-      throw new MBDateParsingException("Could not convert date to string with input date: " + date, e);
+      throw new DateParsingException("Could not convert date to string with input date: " + date, e);
     }
 
   }
@@ -216,7 +216,7 @@ public final class DateUtilities
     }
     catch (Exception e)
     {
-      throw new MBDateParsingException("Could not convert long to string with input long: " + time, e);
+      throw new DateParsingException("Could not convert long to string with input long: " + time, e);
     }
   }
 
