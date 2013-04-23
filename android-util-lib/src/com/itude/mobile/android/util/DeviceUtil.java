@@ -127,9 +127,9 @@ public final class DeviceUtil
         case (Build.VERSION_CODES.JELLY_BEAN) : //$FALL-THROUGH$
           _osVersion = "Android 4.1 JellyBean";
           break;
-        case (Build.VERSION_CODES.JELLY_BEAN_MR1) :
-          _osVersion = "Android 4.2 JellyBean";
-          break;
+        /*        case (Build.VERSION_CODES.JELLY_BEAN_MR1) :
+                  _osVersion = "Android 4.2 JellyBean";
+                  break;*/
 
         default :
           _osVersion = "Unknown";
