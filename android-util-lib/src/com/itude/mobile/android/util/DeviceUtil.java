@@ -18,10 +18,7 @@ import android.view.WindowManager;
 public final class DeviceUtil
 {
 
-  private static DeviceUtil              _instance;
-
-  private static final String          DEVICE_NORMAL                = "No";
-  private static final String          DEVICE_BIG                   = "Yes";
+  private static DeviceUtil            _instance;
 
   private String                       _osVersion                   = null;
   private TwinResult<Integer, Integer> _screenSize                  = null;
@@ -30,7 +27,7 @@ public final class DeviceUtil
   private String                       _screenType                  = null;
   private String                       _deviceModel                 = null;
 
-  private static String                _isBigDevice                 = null;
+  private static Boolean               _isBigDevice                 = null;
 
   private static Context               _context                     = null;
 
@@ -130,6 +127,9 @@ public final class DeviceUtil
         case (Build.VERSION_CODES.JELLY_BEAN) : //$FALL-THROUGH$
           _osVersion = "Android 4.1 JellyBean";
           break;
+        /*        case (Build.VERSION_CODES.JELLY_BEAN_MR1) :
+                  _osVersion = "Android 4.2 JellyBean";
+                  break;*/
 
         default :
           _osVersion = "Unknown";
@@ -236,7 +236,7 @@ public final class DeviceUtil
     _context = context;
   }
 
-  public static String isBigDeviceType()
+  public static boolean isBigDeviceType()
   {
     if (_isBigDevice == null)
     {
@@ -257,17 +257,17 @@ public final class DeviceUtil
             || metrics.densityDpi == DisplayMetrics.DENSITY_XHIGH)
         {
 
-          _isBigDevice = DEVICE_BIG;
+          _isBigDevice = true;
 
         }
         else
         {
-          _isBigDevice = DEVICE_NORMAL;
+          _isBigDevice = false;
         }
       }
       else
       {
-        _isBigDevice = DEVICE_NORMAL;
+        _isBigDevice = false;
 
       }
     }
@@ -298,17 +298,17 @@ public final class DeviceUtil
 
   public boolean isPhone()
   {
-    return DEVICE_NORMAL.equals(isBigDeviceType()) && (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB);
+    return !isBigDeviceType() && (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB);
   }
 
   public boolean isPhoneV14()
   {
-    return DEVICE_NORMAL.equals(isBigDeviceType()) && (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1);
+    return !isBigDeviceType() && (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1);
   }
 
   public static boolean isTablet()
   {
-    return DEVICE_BIG.equals(isBigDeviceType());
+    return isBigDeviceType();
   }
 
   public String getUniqueID()
