@@ -262,7 +262,7 @@ public final class StringUtil
     }
 
     int numberStart = stringToFormat.indexOf(" ");
-    if (numberStart != -1 && (stringToFormat.indexOf("$") > -1 || stringToFormat.indexOf("€") > -1))
+    if (numberStart != -1 || (stringToFormat.indexOf("$") > -1 || stringToFormat.indexOf("€") > -1))
     {
       numberStart = Math.max(stringToFormat.indexOf("$"), stringToFormat.indexOf("€"));
     }
