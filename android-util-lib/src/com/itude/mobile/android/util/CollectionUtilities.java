@@ -99,9 +99,15 @@ public final class CollectionUtilities
     return count;
   }
 
-  private static final int getFreq(final Object obj, final Map<?,?> freqMap)
+  private static final int getFreq(final Object obj, final Map<?, ?> freqMap)
   {
     Integer count = (Integer) freqMap.get(obj);
     return count != null ? count.intValue() : 0;
+  }
+
+  public static <T> T getFirst(Collection<T> collection)
+  {
+    if (collection.isEmpty()) return null;
+    else return collection.iterator().next();
   }
 }

@@ -29,4 +29,12 @@ public class ComparisonUtil
 
     return false;
   }
+
+  public static <T> T coalesce(T... args)
+  {
+    for (T arg : args)
+      if (arg != null) return arg;
+
+    return null;
+  }
 }
