@@ -46,9 +46,9 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git@127.0.0.1:itude-mobile-android-util.git/android-util-test</connection>
-		<developerConnection>scm:git:git@127.0.0.1:itude-mobile-android-util.git/android-util-test</developerConnection>
-		<url>scm:git:git@127.0.0.1:itude-mobile-android-util.git/android-util-test</url>
+		<url>https://github.com/ItudeMobile/itude-mobile-android-util/android-util-test</url>
+		<connection>scm:git:git://github.com/ItudeMobile/itude-mobile-android-util.git/android-util-test</connection>
+		<developerConnection>scm:git:git@github.com:ItudeMobile/itude-mobile-android-util.git/android-util-test</developerConnection>
 	</scm>
 
 	<build>
