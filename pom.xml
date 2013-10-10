@@ -2,11 +2,6 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.itude.poms</groupId>
-		<artifactId>itude-jenkins</artifactId>
-		<version>1.8</version>
-	</parent>
 	<groupId>com.itude.mobile.android.util</groupId>
 	<artifactId>android-util</artifactId>
 	<version>0.0.2.1-SNAPSHOT</version>
@@ -15,6 +10,10 @@
 	<description>Itude Mobile Android Util</description>
 	<url>http://www.itude.com</url>
 	<inceptionYear>2013</inceptionYear>
+	<organization>
+		<name>Itude</name>
+		<url>http://www.itude.com/</url>
+	</organization>
 	<developers>
 		<developer>
 			<name>Coen Houtman</name>
@@ -34,9 +33,9 @@
 				<version>${android.version}</version>
 			</dependency>
 			<dependency>
-            	<groupId>com.google.android.compatibility</groupId>
-            	<artifactId>android-support</artifactId>
-            	<version>v4</version>
+            	<groupId>com.android.support</groupId>
+	  			<artifactId>support-v4</artifactId>
+            	<version>${android.support.version}</version>
         	</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
@@ -65,10 +64,15 @@
         </profile>
     </profiles>
    
+	<issueManagement>
+		<url>https://github.com/ItudeMobile/itude-mobile-android-util/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+	
    	<scm>
-		<connection>scm:git:git@127.0.0.1:itude-mobile-android-util.git</connection>
-		<developerConnection>scm:git:git@127.0.0.1:itude-mobile-android-util.git</developerConnection>
-		<url>scm:git:git@127.0.0.1:itude-mobile-android-util.git</url>
+		<url>https://github.com/ItudeMobile/itude-mobile-android-util</url>
+		<connection>scm:git:git://github.com/ItudeMobile/itude-mobile-android-util.git</connection>
+		<developerConnection>scm:git:git@github.com:ItudeMobile/itude-mobile-android-util.git</developerConnection>
 	</scm>
 	
 	<build>
@@ -128,10 +132,18 @@
     </build>
     
     <properties>
-        <xml.obfuscator.version>0.0.2.0</xml.obfuscator.version>
         <core.lib.version>${project.version}</core.lib.version>
         <android.version>4.1</android.version>
+        <android.support.version>13.0.0</android.support.version>
     </properties>
+    
+    <repositories>
+		<repository>
+			<id>itudemobile-github-repository</id>
+			<name>ItudeMobile Github repository</name>
+			<url>http://itudemobile.github.io/maven-repository/releases</url>
+		</repository>
+	</repositories>
     
 </project>
 
