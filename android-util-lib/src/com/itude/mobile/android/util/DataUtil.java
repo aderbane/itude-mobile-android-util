@@ -1,3 +1,18 @@
+/*
+ * (C) Copyright ItudeMobile.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.itude.mobile.android.util;
 
 import java.io.ByteArrayOutputStream;
@@ -182,6 +197,7 @@ class ReadFromGLB implements Reader
   // this cache contains xml files which are already unobfuscated
   private final Map<String, byte[]> _cacheOfXml = new HashMap<String, byte[]>();
 
+  @Override
   public byte[] read(String filename)
   {
     if (!filename.endsWith(".xml")) return null;
@@ -246,6 +262,7 @@ class ReadFromGLB implements Reader
 class ReadFromAsset implements Reader
 {
 
+  @Override
   public byte[] read(String filename)
   {
     try
@@ -262,6 +279,7 @@ class ReadFromAsset implements Reader
 }
 class ReadFromFile implements Reader
 {
+  @Override
   public byte[] read(String filename)
   {
     try
@@ -282,6 +300,7 @@ class ReadFromFile implements Reader
  */
 class ReadFromNone implements Reader
 {
+  @Override
   public byte[] read(String filename)
   {
     return null;
