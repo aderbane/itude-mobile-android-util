@@ -88,10 +88,10 @@
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.7.0</version>
                     <configuration>
 						<sdk>
-							<platform>15</platform>
+							<platform>19</platform>
 						</sdk>
 						<dex>
 							<jvmArguments>
@@ -130,7 +130,7 @@
     <properties>
         <xml.obfuscator.version>0.0.2.0</xml.obfuscator.version>
         <core.lib.version>${project.version}</core.lib.version>
-        <android.version>4.1</android.version>
+        <android.version>4.4</android.version>
     </properties>
     
 </project>
