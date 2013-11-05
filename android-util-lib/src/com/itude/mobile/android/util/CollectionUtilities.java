@@ -110,4 +110,18 @@ public final class CollectionUtilities
     if (collection.isEmpty()) return null;
     else return collection.iterator().next();
   }
+
+  public static <T> T get(Iterable<T> collection, int idx)
+  {
+    Iterator<T> it = collection.iterator();
+    T next = null;
+    do
+    {
+      if (it.hasNext()) next = it.next();
+      else return null;
+      idx--;
+    }
+    while (idx >= 0);
+    return next;
+  }
 }
