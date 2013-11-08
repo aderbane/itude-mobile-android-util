@@ -78,6 +78,7 @@ public final class CollectionUtilities
     }
   }
 
+  @SuppressWarnings("unchecked")
   public static Map<?, ?> getCardinalityMap(final Collection<?> coll)
   {
     Map count = new HashMap();

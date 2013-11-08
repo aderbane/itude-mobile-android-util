@@ -34,9 +34,9 @@
 				<version>${android.version}</version>
 			</dependency>
 			<dependency>
-            	<groupId>com.google.android.compatibility</groupId>
-            	<artifactId>android-support</artifactId>
-            	<version>v4</version>
+            	<groupId>com.android.support</groupId>
+            	<artifactId>support-v4</artifactId>
+            	<version>19</version>
         	</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
