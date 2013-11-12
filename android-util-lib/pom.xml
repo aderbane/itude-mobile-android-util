@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.itude.mobile.android.util</groupId>
 		<artifactId>android-util</artifactId>
-		<version>0.0.2.4-SNAPSHOT</version>
+		<version>0.2.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>android-util-lib</artifactId>
 	<packaging>apklib</packaging>
@@ -17,6 +17,14 @@
 		<developer>
 			<name>Coen Houtman</name>
 			<id>c.houtman</id>
+			<roles>
+				<role>Developer</role>
+				<role>Contributor</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Wiebe Elsinga</name>
+			<id>w.elsinga</id>
 			<roles>
 				<role>Developer</role>
 				<role>Contributor</role>
