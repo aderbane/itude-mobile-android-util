@@ -98,7 +98,7 @@ public final class StringUtil
   }
 
   //returns a string formatted as a number with the original amount of decimals assuming the receiver is a float 
-  //WARNING: Only use this method to present data to the screen (BINCKAPPS-32, BINCKMOBILE-35, BINCKMOBILE-113)
+  //WARNING: Only use this method to present data to the screen
   public static String formatNumberWithOriginalNumberOfDecimals(String stringToFormat, Locale locale)
   {
 
@@ -126,14 +126,14 @@ public final class StringUtil
   }
 
   // returns a string formatted as a number with two decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen (BINCKAPPS-32, BINCKMOBILE-35, BINCKMOBILE-113)
+  // WARNING: Only use this method to present data to the screen
   public static String formatNumberWithTwoDecimals(Locale locale, String stringToFormat)
   {
     return formatNumberWithDecimals(locale, stringToFormat, 2);
   }
 
   // returns a string formatted as a number with three decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen (BINCKAPPS-32, BINCKMOBILE-35, BINCKMOBILE-113)
+  // WARNING: Only use this method to present data to the screen
   public static String formatNumberWithThreeDecimals(Locale locale, String stringToFormat)
   {
     return formatNumberWithDecimals(locale, stringToFormat, 3);
@@ -169,7 +169,7 @@ public final class StringUtil
   }
 
   // returns a string formatted as a price with two decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen (BINCKAPPS-32, BINCKMOBILE-35, BINCKMOBILE-113)
+  // WARNING: Only use this method to present data to the screen
   public static String formatPriceWithTwoDecimals(Locale locale, String stringToFormat)
   {
     if (stringToFormat == null || stringToFormat.length() == 0)
@@ -201,7 +201,7 @@ public final class StringUtil
   }
 
   // returns a string formatted as a price with three decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen (BINCKAPPS-32, BINCKMOBILE-35, BINCKMOBILE-113)
+  // WARNING: Only use this method to present data to the screen
   // TODO why is this method not doing anything with the currency sign?
   public static String formatPriceWithThreeDecimals(Locale locale, String stringToFormat)
   {
@@ -209,7 +209,7 @@ public final class StringUtil
   }
 
   // returns a string formatted as a volume with group separators (eg, 131.224.000) assuming the receiver is an int string read from XML
-  // WARNING: Only use this method to present data to the screen (BINCKAPPS-32, BINCKMOBILE-35, BINCKMOBILE-113)
+  // WARNING: Only use this method to present data to the screen
   public static String formatVolume(Locale locale, String stringToFormat)
   {
     if (stringToFormat == null || stringToFormat.length() == 0)
