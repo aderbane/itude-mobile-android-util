@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.itude.mobile.android.util</groupId>
 		<artifactId>android-util</artifactId>
-		<version>0.2.0.1-SNAPSHOT</version>
+		<version>0.2.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>android-util-test</artifactId>
 	<packaging>apk</packaging>
