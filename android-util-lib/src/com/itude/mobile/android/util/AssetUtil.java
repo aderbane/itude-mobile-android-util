@@ -24,16 +24,27 @@ import android.util.Log;
 
 import com.itude.mobile.android.util.exceptions.DataParsingException;
 
+/**
+ * Utility class for methods to handle assets.
+ *
+ */
 public final class AssetUtil
 {
   private static final String TAG = "AssetUtil";
+
   private static AssetUtil    _instance;
   private Context             _context;
 
+  /**
+   * Default constructor
+   */
   private AssetUtil()
   {
   }
 
+  /**
+   * @return {@link AssetUtil}
+   */
   public static AssetUtil getInstance()
   {
     if (_instance == null)
@@ -44,11 +55,24 @@ public final class AssetUtil
     return _instance;
   }
 
+  /**
+   * Set the {@link Context} for this instance
+   * 
+   * @param context {@link Context}
+   */
   public void setContext(Context context)
   {
     _context = context;
   }
 
+  /**
+   * Get byte array from the file
+   * 
+   * @param fileName file to be read
+   * @return byte array
+   * 
+   * @throws DataParsingException
+   */
   public byte[] getByteArray(String fileName) throws DataParsingException
   {
     AssetManager manager = _context.getAssets();

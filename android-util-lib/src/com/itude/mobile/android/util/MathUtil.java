@@ -15,11 +15,20 @@
  */
 package com.itude.mobile.android.util;
 
+/**
+ * Utility class for methods to handle math.
+ */
 public class MathUtil
 {
 
   private final static int ROUND_SCALE = 1000000;
 
+  /**
+   * Truncate value
+   * 
+   * @param value value that needs to be truncated
+   * @return double
+   */
   public static final double truncate(double value)
   {
     double fraction;

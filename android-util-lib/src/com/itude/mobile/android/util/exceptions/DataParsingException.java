@@ -17,6 +17,9 @@ package com.itude.mobile.android.util.exceptions;
 
 import com.itude.mobile.android.util.ItudeException;
 
+/**
+ * {@link ItudeException} that indicates that data can't be parsed
+ */
 public class DataParsingException extends ItudeException
 {
 
@@ -25,11 +28,22 @@ public class DataParsingException extends ItudeException
    */
   private static final long serialVersionUID = -1726186662862494940L;
 
+  /**
+   * Constructor for DataParsingException.
+   * 
+   * @param msg exception message
+   */
   public DataParsingException(String msg)
   {
     super(msg);
   }
 
+  /**
+   * Constructor for DataParsingException.
+   * 
+   * @param msg exception message 
+   * @param throwable {@link Throwable}
+   */
   public DataParsingException(String msg, Throwable throwable)
   {
     super(msg, throwable);

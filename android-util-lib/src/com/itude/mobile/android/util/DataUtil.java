@@ -28,6 +28,9 @@ import org.apache.commons.codec.binary.Base64;
 import android.content.Context;
 import android.util.Log;
 
+/**
+ * Utility class for methods to handle data.
+ */
 public final class DataUtil
 {
   private static final String       TAG               = "DataUtil";
@@ -39,10 +42,16 @@ public final class DataUtil
   private final Reader              _readerNone       = new ReadFromNone();
   private final ReadFromAll         _readerAll        = new ReadFromAll();
 
+  /**
+   * Default constructor
+   */
   private DataUtil()
   {
   }
 
+  /**
+   * @return {@link DataUtil}
+   */
   public static DataUtil getInstance()
   {
     if (_instance == null)
@@ -53,6 +62,11 @@ public final class DataUtil
     return _instance;
   }
 
+  /**
+   * Set the {@link Context} for this instance
+   * 
+   * @param context {@link Context}
+   */
   public void setContext(Context context)
   {
     _context = context;
@@ -65,12 +79,20 @@ public final class DataUtil
    * the file will not be seen by  {@link #readFromAssetOrFile(String)}.
    * Currently called automatically by {@link FileUtil#writeObjectToFile(Object, String)}
    * and {@link FileUtil#writeToFile(byte[], String, String)}.
+   *
+   * @param filename file name
    */
   public void clearReaderCachForFile(String filename)
   {
     _filenameToReader.remove(filename);
   }
 
+  /**
+   * Get the byte array from an asset or file.
+   * 
+   * @param filename file name
+   * @return byte array
+   */
   public byte[] readFromAssetOrFile(String filename)
   {
     if (_filenameToReader.containsKey(filename))
@@ -100,6 +122,12 @@ public final class DataUtil
     }
   }
 
+  /**
+   * Compress byte array 
+   * 
+   * @param uncompressed byte array
+   * @return compressed byte array
+   */
   public byte[] compress(byte[] uncompressed)
   {
     byte[] result = null;
@@ -140,6 +168,12 @@ public final class DataUtil
     return result;
   }
 
+  /**
+   * Decompress byte array 
+   * 
+   * @param compressed byte array
+   * @return decompressed byte array
+   */
   public byte[] decompress(byte[] compressed)
   {
     return decompress(compressed, 0);
@@ -184,8 +218,17 @@ public final class DataUtil
   }
 
 }
+/**
+ * Reader
+ */
 interface Reader
 {
+  /**
+   * Read file
+   * 
+   * @param filename file name
+   * @return byte array
+   */
   byte[] read(String filename);
 }
 

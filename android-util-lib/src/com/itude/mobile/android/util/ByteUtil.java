@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
 import android.util.Log;
 
 /**
- *
+ * Utility class for methods to handle bytes.
  */
 public final class ByteUtil
 {
@@ -28,23 +28,42 @@ public final class ByteUtil
 
   public static String        UTF8 = "UTF-8";
 
+  /**
+   * Default constructor
+   */
   private ByteUtil()
   {
   }
 
-  static public byte[] encodeStringToBytes(String result, String encodingType)
+  /**
+   * Encodes a {@link String} into a byte array.
+   * 
+   * @param str byte array
+   * @param encodingType encoding type
+   *   
+   * @return byte array
+   */
+  static public byte[] encodeStringToBytes(String str, String encodingType)
   {
     try
     {
-      return result.getBytes(encodingType);
+      return str.getBytes(encodingType);
     }
     catch (UnsupportedEncodingException e)
     {
       Log.w(TAG, "unable is encode bytes with type " + encodingType);
     }
-    return result.getBytes();
+    return str.getBytes();
   }
 
+  /**
+   * Encodes byte array into a byte array.
+   * 
+   * @param bytes byte array
+   * @param encodingType encoding type
+   *   
+   * @return byte array
+   */
   static public byte[] encodeBytes(byte[] bytes, String encodingType)
   {
     String result = encodeBytesToString(bytes, encodingType);
@@ -59,6 +78,14 @@ public final class ByteUtil
     return result.getBytes();
   }
 
+  /**
+   * Encodes byte array into a {@link String}.
+   * 
+   * @param bytes byte array
+   * @param encodingType encoding type
+   *   
+   * @return {@link String}
+   */
   static public String encodeBytesToString(byte[] bytes, String encodingType)
   {
     String result = "";

@@ -15,8 +15,18 @@
  */
 package com.itude.mobile.android.util;
 
+/**
+ * Utility class with comparison checks.
+ */
 public class ComparisonUtil
 {
+  /**
+   * Checks if passed objects are equal. 
+   * 
+   * @param o1 {@link Object}
+   * @param o2 {@link Object}
+   * @return true if equal
+   */
   public static boolean safeEquals(Object o1, Object o2)
   {
     if (o1 == null && o2 == null) return true;
@@ -24,11 +34,26 @@ public class ComparisonUtil
     return o1.equals(o2);
   }
 
+  /**
+   * Checks if passed objects are equal. 
+   * 
+   * @param o1 {@link Comparable}
+   * @param o2 {@link Comparable}
+   * @return -1 if not equal, 0 if objects are null, 1 if objects are equal
+   */
   public static <T extends Comparable<T>> int safeCompare(T o1, T o2)
   {
     return safeCompare(o1, o2, true);
   }
 
+  /**
+   * Checks if passed objects are equal. 
+   * 
+   * @param o1 {@link Comparable}
+   * @param o2 {@link Comparable}
+   * @param nullsFirst true if first object can be null
+   * @return -1 if not equal, 0 if objects are null, 1 if objects are equal
+   */
   public static <T extends Comparable<T>> int safeCompare(T o1, T o2, boolean nullsFirst)
   {
     if (o1 == null && o2 == null) return 0;

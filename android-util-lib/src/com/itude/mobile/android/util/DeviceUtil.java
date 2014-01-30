@@ -26,7 +26,7 @@ import android.view.Display;
 import android.view.WindowManager;
 
 /**
- * @author Coen Houtman
+ * Utility class for methods to handle device.
  * 
  * The class provides methods for other classes to check what kind of device the application is running on.
  */
@@ -50,6 +50,9 @@ public final class DeviceUtil
   {
   }
 
+  /**
+   * @return {@link DeviceUtil}
+   */
   public static DeviceUtil getInstance()
   {
     if (_instance == null)
@@ -66,6 +69,11 @@ public final class DeviceUtil
     return _instance;
   }
 
+  /**
+   * Get the device type
+   * 
+   * @return Smartphone or Smartphone V14 or Tablet
+   */
   public String getDeviceType()
   {
     if (isPhone())
@@ -86,6 +94,11 @@ public final class DeviceUtil
     }
   }
 
+  /**
+   * Get the device model
+   * 
+   * @return device model
+   */
   public String getDeviceModel()
   {
     if (_deviceModel == null)
@@ -100,6 +113,11 @@ public final class DeviceUtil
     return _deviceModel;
   }
 
+  /**
+   * Get the OS version 
+   * 
+   * @return Android x
+   */
   public String getOSVersion()
   {
     if (_osVersion == null)
@@ -156,6 +174,11 @@ public final class DeviceUtil
     return _osVersion;
   }
 
+  /**
+   * Get the screen size
+   * 
+   * @return screen size
+   */
   public TwinResult<Integer, Integer> getScreenSize()
   {
     if (_screenSize == null)
@@ -170,6 +193,11 @@ public final class DeviceUtil
     return _screenSize;
   }
 
+  /**
+   * Get the screen density classification
+   * 
+   * @return screen density classification
+   */
   public String getScreenDensityClassification()
   {
     if (_screenDensityClassification == null)
@@ -198,6 +226,11 @@ public final class DeviceUtil
     return _screenDensityClassification;
   }
 
+  /**
+   * Get the screen density
+   * 
+   * @return screen {@link TwinResult}
+   */
   public TwinResult<Float, Float> getScreenDensity()
   {
     if (_screenDensity == null)
@@ -210,6 +243,11 @@ public final class DeviceUtil
     return _screenDensity;
   }
 
+  /**
+   * Get the screen type 
+   * 
+   * @return small/normal/large/xlarge/unknown 
+   */
   public String getScreenType()
   {
     if (_screenType == null)
@@ -241,16 +279,31 @@ public final class DeviceUtil
     return _screenType;
   }
 
+  /**
+   * Get the Layout mask 
+   * 
+   * @return layout mask
+   */
   private static int getLayoutMask()
   {
     return getContext().getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
   }
 
+  /**
+   * Set the {@link Context} for this instance
+   * 
+   * @param context {@link Context}
+   */
   public void setContext(Context context)
   {
     _context = context;
   }
 
+  /**
+   * Is device big?
+   * 
+   * @return true if device is tablet or screen size is bigger than 7 inch
+   */
   public static boolean isBigDeviceType()
   {
     if (_isBigDevice == null)
@@ -289,6 +342,11 @@ public final class DeviceUtil
     return _isBigDevice;
   }
 
+  /**
+   * Get the display matrix
+   * 
+   * @return {@link DisplayMetrics}
+   */
   private static DisplayMetrics getDisplayMetrics()
   {
     DisplayMetrics metrics = new DisplayMetrics();
@@ -296,6 +354,11 @@ public final class DeviceUtil
     return metrics;
   }
 
+  /**
+   * Get the Display
+   * 
+   * @return {@link Display}
+   */
   private static Display getDisplay()
   {
     return ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
@@ -306,26 +369,52 @@ public final class DeviceUtil
     return _context;
   }
 
+  /**
+   * Has device native actionbar support
+   * 
+   * @return true if device has native actionbar support
+   */
   public boolean hasNativeActionBarSupport()
   {
     return Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1;
   }
 
+  /**
+   * Is the device a phone
+   * 
+   * @return true is device is a phone
+   */
   public boolean isPhone()
   {
     return !isBigDeviceType() && (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB);
   }
 
+  /**
+   * Is the device a phone with Android 4.x and up
+   * 
+   * @return true is device is a phone with Android 4.x and up
+   */
   public boolean isPhoneV14()
   {
     return !isBigDeviceType() && (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1);
   }
+
+  /**
+   * Is the device a tablet
+   * 
+   * @return true is device is a tablet
+   */
 
   public static boolean isTablet()
   {
     return isBigDeviceType();
   }
 
+  /**
+   * Generate unique id
+   * 
+   * @return unique id
+   */
   public String getUniqueID()
   {
     String androidID = Settings.Secure.getString(_context.getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -338,6 +427,11 @@ public final class DeviceUtil
     return androidID;
   }
 
+  /**
+   * Is Internet connection available?
+   * 
+   * @return true if Internet connection is available 
+   */
   public boolean isInternetConnectionAvailable()
   {
     ConnectivityManager cm = (ConnectivityManager) _context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -351,6 +445,11 @@ public final class DeviceUtil
     }
   }
 
+  /**
+   * Is phone service available?
+   * 
+   * @return true if phone service  is available 
+   */
   public boolean isPhoneServiceAvailable()
   {
     TelephonyManager tm = (TelephonyManager) _context.getSystemService(Context.TELEPHONY_SERVICE);

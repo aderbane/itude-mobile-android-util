@@ -34,9 +34,6 @@ import org.apache.http.params.HttpParams;
 /**
  * This socket factory will create ssl socket that accepts self signed certificate
  *
- * @author olamy
- * @version $Id: EasySSLSocketFactory.java 765355 2009-04-15 20:59:07Z evenisse $
- * @since 1.2.3
  */
 public class EasySSLSocketFactory implements SocketFactory, LayeredSocketFactory
 {
@@ -123,12 +120,6 @@ public class EasySSLSocketFactory implements SocketFactory, LayeredSocketFactory
   {
     return getSSLContext().getSocketFactory().createSocket(socket, host, port, autoClose);
   }
-
-  // -------------------------------------------------------------------
-  // javadoc in org.apache.http.conn.scheme.SocketFactory says :
-  // Both Object.equals() and Object.hashCode() must be overridden
-  // for the correct operation of some connection managers
-  // -------------------------------------------------------------------
 
   @Override
   public boolean equals(Object obj)

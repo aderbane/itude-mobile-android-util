@@ -31,6 +31,9 @@ import android.util.Log;
 
 import com.itude.mobile.android.util.exceptions.DataParsingException;
 
+/**
+ * Utility class for methods to handle files.
+ */
 public final class FileUtil
 {
   private static final String TAG = "FileUtil";
@@ -42,6 +45,9 @@ public final class FileUtil
   {
   }
 
+  /**
+   * @return {@link FileUtil}
+   */
   public static FileUtil getInstance()
   {
     if (_instance == null)
@@ -52,11 +58,24 @@ public final class FileUtil
     return _instance;
   }
 
+  /**
+   * Set the {@link Context} for this instance
+   * 
+   * @param context {@link Context}
+   */
   public void setContext(Context context)
   {
     _context = context;
   }
 
+  /**
+   * Get byte array from the file
+   * 
+   * @param fileName file to be read
+   * @return byte array
+   * 
+   * @throws DataParsingException
+   */
   public byte[] getByteArray(String fileName) throws DataParsingException
   {
     FileInputStream fis = null;
@@ -95,6 +114,14 @@ public final class FileUtil
     return bytes.toByteArray();
   }
 
+  /**
+   * Write content to file
+   * 
+   * @param fileContents byte array
+   * @param fileName file name
+   * @param encoding encoding
+   * @return true if content has been written to a file
+   */
   public boolean writeToFile(byte[] fileContents, String fileName, String encoding)
   {
     DataUtil.getInstance().clearReaderCachForFile(fileName);
@@ -140,6 +167,13 @@ public final class FileUtil
     return success;
   }
 
+  /**
+   * Write Object to file
+   * 
+   * @param Object object
+   * @param fileName file name
+   * @return true if object has been written to a file
+   */
   public boolean writeObjectToFile(Object object, String fileName)
   {
     DataUtil.getInstance().clearReaderCachForFile(fileName);
@@ -174,6 +208,12 @@ public final class FileUtil
     return success;
   }
 
+  /**
+   * Read file based on filename.
+   * 
+   * @param fileName file name
+   * @return {@link Object} 
+   */
   public Object readObjectFromFile(String fileName)
   {
     ByteArrayInputStream byteStream = null;
@@ -242,6 +282,12 @@ public final class FileUtil
     return success;
   }
 
+  /**
+   * Get String from resource
+   * 
+   * @param rawResourceId id
+   * @return {@link String}
+   */
   public String getStringFromRawResource(int rawResourceId)
   {
     Resources resources = _context.getResources();

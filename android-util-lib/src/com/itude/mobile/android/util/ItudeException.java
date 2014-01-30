@@ -15,6 +15,9 @@
  */
 package com.itude.mobile.android.util;
 
+/**
+ * Default Itude Exception
+ */
 public class ItudeException extends RuntimeException
 {
 
@@ -23,27 +26,42 @@ public class ItudeException extends RuntimeException
    */
   private static final long serialVersionUID = 1261201628377680658L;
 
+  /**
+   * Default construction
+   */
   public ItudeException()
   {
-    // TODO Auto-generated constructor stub
   }
 
-  public ItudeException(String arg0)
+  /**
+   * Constructor for ItudeException.
+   * 
+   * @param msg exception message
+   */
+  public ItudeException(String msg)
   {
-    super(arg0);
-    // TODO Auto-generated constructor stub
+    super(msg);
   }
 
-  public ItudeException(Throwable arg0)
+  /**
+   * Constructor for ItudeException.
+   * 
+   * @param throwable throwable {@link Throwable}
+   */
+  public ItudeException(Throwable throwable)
   {
-    super(arg0);
-    // TODO Auto-generated constructor stub
+    super(throwable);
   }
 
-  public ItudeException(String arg0, Throwable arg1)
+  /**
+   * Constructor for ItudeException.
+   * 
+   * @param msg exception message
+   * @param throwable throwable {@link Throwable}
+   */
+  public ItudeException(String msg, Throwable throwable)
   {
-    super(arg0, arg1);
-    // TODO Auto-generated constructor stub
+    super(msg, throwable);
   }
 
 }

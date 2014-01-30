@@ -19,9 +19,16 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
+/**
+ * Utility class for methods to handle double.
+ *
+ */
 public final class DoubleUtil
 {
 
+  /**
+   * Default constructor
+   */
   private DoubleUtil()
   {
   }

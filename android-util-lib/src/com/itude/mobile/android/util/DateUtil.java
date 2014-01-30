@@ -26,6 +26,9 @@ import android.util.Log;
 
 import com.itude.mobile.android.util.exceptions.DateParsingException;
 
+/**
+ * Utility class for methods to handle data.
+ */
 public final class DateUtil
 {
   private static final String                        TAG                    = "DateUtilities";
@@ -40,13 +43,21 @@ public final class DateUtil
                                                                               }
                                                                             };
 
+  /**
+   * Default constructor
+   */
   private DateUtil()
   {
   }
 
-  // Formats the date depending on the current date assuming the receiver is a date string 
-  // If the date is equal to the current date, the time is given back as a string
-  // If the date is NOT equal to the current date, then a a date is presented back as a string
+  /**
+   * 
+   * Formats the date depending on the current date assuming the receiver is a date string
+   *  
+   * @param locale
+   * @param dateString
+   * @return If the date is equal to the current date, the time is given back as a string. If the date is NOT equal to the current date, then a a date is presented back as a string
+   */
   public static String formatDateDependingOnCurrentDate(Locale locale, String dateString)
   {
     String result = dateString;
@@ -84,6 +95,13 @@ public final class DateUtil
     }
   }
 
+  /**
+   * Format {@link String}
+   * 
+   * @param stringToFormat {@link String} to format
+   * @param format format
+   * @return formatted {@link String} 
+   */
   public synchronized static String formatString(String stringToFormat, String format)
   {
     try
@@ -104,6 +122,12 @@ public final class DateUtil
     }
   }
 
+  /**
+   * Date from XML {@link String}
+   * 
+   * @param stringToFormat {@link String} to format
+   * @return {@link Date} 
+   */
   public synchronized static Date dateFromXML(String stringToFormat)
   {
     Date value = null;
@@ -125,6 +149,13 @@ public final class DateUtil
     return value;
   }
 
+  /***
+   * Date from {@link String}
+   * 
+   * @param stringToFormat {@link String} to format
+   * @param format format
+   * @return {@link Date} 
+   */
   public synchronized static Date dateFromString(String stringToFormat, String format)
   {
     Date value = null;
@@ -143,6 +174,12 @@ public final class DateUtil
     return value;
   }
 
+  /**
+   * Get {@link String} representation of a year
+   * @param date {@link Date}
+   * @param format format
+   * @return {@link String} representation of a year
+   */
   public synchronized static String getYear(Date date, String format)
   {
     try
@@ -156,6 +193,12 @@ public final class DateUtil
     }
   }
 
+  /**
+   *  Date from XML {@link String}
+   * @param stringToFormat {@link String} to format
+   * @param format format
+   * @return {@link Date}
+   */
   public synchronized static Date dateFromXML(String stringToFormat, String format)
   {
     if (StringUtil.isEmpty(format))
@@ -186,11 +229,24 @@ public final class DateUtil
     }
   }
 
+  /**
+   * Date to {@link String}
+   * 
+   * @param date {@link Date}
+   * @return {@link String}
+   */
   public static String dateToString(Date date)
   {
     return dateToStringDefaultFormat(date);
   }
 
+  /**
+   * Date to {@link String}
+   * 
+   * @param date {@link Date}
+   * @param format format
+   * @return {@link String}
+   */
   public static String dateToString(Date date, String format)
   {
     if (StringUtil.isEmpty(format)) return dateToStringDefaultFormat(date);
@@ -207,11 +263,24 @@ public final class DateUtil
 
   }
 
+  /**
+   * Date to {@link String} using the default format (yyyy-MM-dd'T'HH:mm:ss)
+   * 
+   * @param dateToFormat {@link Date}
+   * @return {@link String}
+   */
+
   private static String dateToStringDefaultFormat(Date dateToFormat)
   {
     return TLDEFAULTDATEFORMATTER.get().format(dateToFormat);
   }
 
+  /**
+   * Time to {@link String}
+   * 
+   * @param time long
+   * @return {@link String}
+   */
   public static String longToString(long time)
   {
     Calendar calendar = Calendar.getInstance();
@@ -219,6 +288,13 @@ public final class DateUtil
     return dateToStringDefaultFormat(calendar.getTime());
   }
 
+  /**
+   * Time to {@link String}
+   * 
+   * @param time long
+   * @param format format
+   * @return {@link String}
+   */
   public static String longToString(long time, String format)
   {
     if (StringUtil.isEmpty(format)) return longToString(time);
@@ -235,6 +311,12 @@ public final class DateUtil
     }
   }
 
+  /**
+   * Set the time of the {@link Calendar}
+   * 
+   * @param calender {@link Calendar} 
+   * @param time {@link String}
+   */
   public static void setCalanderTime(Calendar calender, String time)
   {
     if (StringUtil.isNotBlank(time))
@@ -250,6 +332,11 @@ public final class DateUtil
     }
   }
 
+  /**
+   * Create new {@link Calendar} and set time
+   * @param time {@link String}
+   * @return {@link Calendar}
+   */
   public static Calendar createNewCalenderWithTime(String time)
   {
     Calendar calender = null;
@@ -267,6 +354,12 @@ public final class DateUtil
     return safeLongToInt(diff / (1000 * 60 * 60 * 24));
   }
 
+  /**
+   * Long to int
+   * 
+   * @param l long
+   * @return int
+   */
   public static int safeLongToInt(long l)
   {
     if (l < Integer.MIN_VALUE || l > Integer.MAX_VALUE)
@@ -276,6 +369,13 @@ public final class DateUtil
     return (int) l;
   }
 
+  /**
+   * Add days to a {@link Date}
+   * 
+   * @param date {@link Date}
+   * @param days amount of days
+   * @return {@link Date}
+   */
   public static Date addDays(Date date, int days)
   {
     Calendar cal = Calendar.getInstance();

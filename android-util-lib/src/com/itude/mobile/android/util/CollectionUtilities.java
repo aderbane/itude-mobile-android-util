@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Utility class for methods to handle collections.
+ */
 public final class CollectionUtilities
 {
 

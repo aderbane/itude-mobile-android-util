@@ -17,8 +17,7 @@ package com.itude.mobile.android.util;
 
 /**
  * This class allows you to create a Runnable with a parameter.
- * @author Gert
- *
+ * 
  * @param <T> the type of parameter
  */
 public abstract class RunnableWithParam<T> implements Runnable

@@ -143,7 +143,6 @@ public final class StringUtil
    * 
    * @param stringToFormat
    * @param exactNumberOfDecimals can be any number, also negative as the used DecimalFormatter accepts it and makes it 0
-   * @return
    */
   public static String formatNumberWithDecimals(Locale locale, String stringToFormat, int exactNumberOfDecimals)
   {

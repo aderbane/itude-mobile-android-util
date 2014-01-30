@@ -17,8 +17,18 @@ package com.itude.mobile.android.util;
 
 import android.content.Context;
 
+/**
+ * Utility class for methods to handle math.
+ */
 public final class ScreenUtil
 {
+  /**
+   * Convert dimension pixels to pixels
+   * 
+   * @param context {@link Context}
+   * @param dimensionPixels float
+   * @return pixels
+   */
   public final static int convertDimensionPixelsToPixels(Context context, float dimensionPixels)
   {
     final float scale = context.getResources().getDisplayMetrics().density;
@@ -26,12 +36,26 @@ public final class ScreenUtil
     return (int) (dimensionPixels * (scale) + 0.5f);
   }
 
+  /**
+   * Get height pixels based on the given percentage
+   * 
+   * @param context  {@link Context}
+   * @param percentage float
+   * @return pixel height
+   */
   public final static int getHeightPixelsForPercentage(Context context, float percentage)
   {
     final float height = context.getResources().getDisplayMetrics().heightPixels;
     return (int) ((height / 100) * percentage);
   }
 
+  /**
+   * Get width pixels based on the given percentage
+   * 
+   * @param context  {@link Context}
+   * @param percentage float
+   * @return pixel width
+   */
   public final static int getWidthPixelsForPercentage(Context context, float percentage)
   {
     final float width = context.getResources().getDisplayMetrics().widthPixels;

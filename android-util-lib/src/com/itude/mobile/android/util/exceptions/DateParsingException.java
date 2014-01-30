@@ -17,6 +17,10 @@ package com.itude.mobile.android.util.exceptions;
 
 import com.itude.mobile.android.util.ItudeException;
 
+/**
+ * {@link ItudeException} that indicates that a date can't be parsed
+ *
+ */
 public class DateParsingException extends ItudeException
 {
 
@@ -25,11 +29,22 @@ public class DateParsingException extends ItudeException
    */
   private static final long serialVersionUID = -3824251496748591427L;
 
+  /**
+   * Constructor for DateParsingException.
+   * 
+   * @param msg exception message
+   */
   public DateParsingException(String msg)
   {
     super(msg);
   }
 
+  /**
+   * Constructor for DateParsingException.
+   * 
+   * @param msg exception message
+   * @param throwable throwable {@link Throwable}
+   */
   public DateParsingException(String msg, Throwable throwable)
   {
     super(msg, throwable);
