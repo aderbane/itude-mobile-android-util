@@ -17,12 +17,10 @@ package com.itude.mobile.android.util;
 
 /**
  * Utility template class for when you want to return 2 values.
- * @author Gert
- *
+ * 
  * @param <T1> the main result type, often boolean to indicate success.
  * @param <T2> the secondary result type, typically only valid when the boolean is true
  * 
- * An example can be found in DataUtil.java
  */
 public class TwinResult<T1, T2>
 {

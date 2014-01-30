@@ -15,11 +15,17 @@
  */
 package com.itude.mobile.android.util;
 
+/**
+ * Utility class to generate unique ID
+ */
 public class UniqueIntegerGenerator
 {
 
   private static int uniqueInteger = 0;
 
+  /**
+   * @return unique ID
+   */
   public static int getId()
   {
     uniqueInteger++;

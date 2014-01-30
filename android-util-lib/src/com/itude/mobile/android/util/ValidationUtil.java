@@ -16,17 +16,25 @@
 package com.itude.mobile.android.util;
 
 /**
- * 
- *
+ * Utility class for methods to handle validation.
  */
 public final class ValidationUtil
 {
 
+  /**
+   * Default constructor
+   */
   private ValidationUtil()
   {
 
   }
 
+  /**
+   * Validate Email.
+   * 
+   * @param value value
+   * @return true is email is valid
+   */
   public static boolean validateEmail(String value)
   {
     if (StringUtil.isBlank(value))
@@ -42,6 +50,12 @@ public final class ValidationUtil
     return true;
   }
 
+  /**
+   * Validate name.
+   * 
+   * @param name name
+   * @return true is name is valid
+   */
   public static boolean validateName(String name)
   {
     boolean validate = true;
@@ -60,6 +74,12 @@ public final class ValidationUtil
     return validate;
   }
 
+  /**
+   * Validate initials.
+   * 
+   * @param initials initials
+   * @return true is initials is valid
+   */
   public static boolean validateInitials(String initials)
   {
     boolean validate = true;
@@ -74,6 +94,12 @@ public final class ValidationUtil
     return validate;
   }
 
+  /**
+   * Validate prefix.
+   * 
+   * @param prefix prefix
+   * @return true is prefix is valid
+   */
   public static boolean validatePrefix(String prefix)
   {
     boolean validate = true;
@@ -84,6 +110,12 @@ public final class ValidationUtil
     return validate;
   }
 
+  /**
+   * Validate surname.
+   * 
+   * @param surname surname
+   * @return true is email is surname
+   */
   public static boolean validateSurname(String surname)
   {
     boolean validate = true;
@@ -102,6 +134,12 @@ public final class ValidationUtil
     return validate;
   }
 
+  /**
+   * Validate birthDate.
+   * 
+   * @param birthDate birthDate
+   * @return true is birthDate is valid
+   */
   public static boolean validateBirthdate(String birthDate)
   {
     boolean validate = true;
@@ -113,6 +151,12 @@ public final class ValidationUtil
 
   }
 
+  /**
+   * Validate address.
+   * 
+   * @param address address
+   * @return true is address is valid
+   */
   public static boolean validateAddress(String address)
   {
     boolean validate = true;
@@ -131,6 +175,12 @@ public final class ValidationUtil
     return validate;
   }
 
+  /**
+   * Validate houseNumber.
+   * 
+   * @param houseNumber houseNumber
+   * @return true is email is houseNumber
+   */
   public static boolean validateNumber(String houseNumber)
   {
     boolean validate = true;
@@ -145,6 +195,12 @@ public final class ValidationUtil
     return validate;
   }
 
+  /**
+   * Validate zipcode.
+   * 
+   * @param zipCode zipcode
+   * @return true is zipcode is valid
+   */
   public static boolean validateZipcode(String zipCode)
   {
     boolean validate = true;
@@ -159,6 +215,12 @@ public final class ValidationUtil
     return validate;
   }
 
+  /**
+   * Validate city.
+   * 
+   * @param city city
+   * @return true is city is valid
+   */
   public static boolean validateCity(String city)
   {
     boolean validate = true;

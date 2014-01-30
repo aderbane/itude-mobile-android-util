@@ -18,13 +18,25 @@ package com.itude.mobile.android.util;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Utility class for methods to handle {@link View}.
+ */
 public final class ViewUtilities
 {
 
+  /**
+   * Default constructor
+   */
   private ViewUtilities()
   {
   }
 
+  /**
+   * Detach a {@link View}
+   * 
+   * @param view {@link View} to be detached
+   * @return detached {@link View}
+   */
   public static View detachView(View view)
   {
     if (view != null && view.getParent() != null)

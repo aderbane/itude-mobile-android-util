@@ -28,21 +28,42 @@ import org.apache.commons.codec.binary.Hex;
 
 import android.util.Log;
 
+/**
+ * Utility class for methods to handle math.
+ */
 public final class StringUtil
 {
   private static final String TAG   = "StringUtil";
 
   public static final String  EMPTY = "";
 
+  /**
+   * Sefault constructor
+   */
   private StringUtil()
   {
   }
 
+  /**
+   * Set the formatter.
+   * 
+   * @param formatter {@link DecimalFormat}
+   * @param locale {@link Locale}
+   * @param numDec number of decimals
+   */
   private static void setupFormatter(DecimalFormat formatter, Locale locale, int numDec)
   {
     setupFormatter(formatter, locale, numDec, numDec);
   }
 
+  /**
+   * Set the formatter.
+   * 
+   * @param formatter {@link DecimalFormat}
+   * @param locale {@link Locale}
+   * @param minimalDecimalNumbers minimal number of decimals
+   * @param maximumDecimalNumbers maximum number of decimals
+   */
   private static void setupFormatter(DecimalFormat formatter, Locale locale, int minimalDecimalNumbers, int maximumDecimalNumbers)
   {
     formatter.setDecimalFormatSymbols(new DecimalFormatSymbols(locale));
@@ -53,6 +74,13 @@ public final class StringUtil
     formatter.setGroupingSize(3);
   }
 
+  /**
+   * Strip the given {@link String} with the given {@link String} characters 
+   * 
+   * @param inputString {@link String} to be stripped 
+   * @param stripCharacters {@link String} strip characters
+   * @return Stripped {@link String}
+   */
   public static String stripCharacters(String inputString, String stripCharacters)
   {
     char[] charArray = stripCharacters.toCharArray();
@@ -65,15 +93,23 @@ public final class StringUtil
     return inputString;
   }
 
+  /**
+   * Strip the given {@link String} with the given character 
+   *  
+   * @param inputString {@link String} to be stripped 
+   * @param stripCharacter strip character
+   * @return Stripped {@link String}
+   */
   public static String stripCharacter(String inputString, char stripCharacter)
   {
     return inputString.replaceAll(Pattern.quote(Character.toString(stripCharacter)), "");
   }
 
   /**
+   * Appends spaces to the supplied {@link String}
    * 
-   * @param level
-   * @return String of length level spaces
+   * @param level level
+   * @return {@link String} of length level spaces
    * 
    */
   public static String getIndentStringWithLevel(int level)
@@ -85,8 +121,8 @@ public final class StringUtil
   /**
    * Appends spaces to the supplied StringBuffer, returns the same StringBuffer.
    * 
-   * @param appendToMe
-   * @param level
+   * @param appendToMe {@link StringBuffer}
+   * @param level level
    * @return the same StringBuffer given as a param, useful for chaining calls
    */
   public static StringBuffer appendIndentString(StringBuffer appendToMe, int level)
@@ -125,30 +161,56 @@ public final class StringUtil
     return result;
   }
 
-  // returns a string formatted as a number with two decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen
+  /**
+   * Format {@link String} like a number with two decimals
+   * 
+   * WARNING: Only use this method to present data to the screen
+   * 
+   * @param locale {@link Locale}
+   * @param stringToFormat {@link String} to format
+   * @return a {@link String} formatted as a number with two decimals assuming the receiver is a float string read from XML
+   */
   public static String formatNumberWithTwoDecimals(Locale locale, String stringToFormat)
   {
     return formatNumberWithDecimals(locale, stringToFormat, 2);
   }
 
-  // returns a string formatted as a number with three decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen
+  /**
+   * Format {@link String} like a number with three decimals
+   * 
+   * WARNING: Only use this method to present data to the screen
+   * 
+   * @param locale {@link Locale}
+   * @param stringToFormat {@link String} to format
+   * @return a {@link String} formatted as a number with three decimals assuming the receiver is a float string read from XML
+   */
   public static String formatNumberWithThreeDecimals(Locale locale, String stringToFormat)
   {
     return formatNumberWithDecimals(locale, stringToFormat, 3);
   }
 
   /***
+   * Format {@link String} like a number with given decimals
    * 
-   * @param stringToFormat
+   * @param stringToFormat {@link String} to format
    * @param exactNumberOfDecimals can be any number, also negative as the used DecimalFormatter accepts it and makes it 0
+   * @return a {@link String} formatted as a number with given decimals assuming the receiver is a float string read from XML
    */
   public static String formatNumberWithDecimals(Locale locale, String stringToFormat, int exactNumberOfDecimals)
   {
     return formatNumberWithDecimals(locale, stringToFormat, exactNumberOfDecimals, exactNumberOfDecimals);
   }
 
+  /**
+   * 
+   * Format {@link String} like a number with given decimals
+   * 
+   * @param locale {@link Locale}
+   * @param stringToFormat {@link String} to format
+   * @param minimalNumberOfDecimals minimal amount of decimals. Can be any number, also negative as the used DecimalFormatter 
+   * @param maximumNumberOfDecimals maximum amount of decimals. Can be any number, also negative as the used DecimalFormatter 
+   * @return a {@link String} formatted as a number with given decimals assuming the receiver is a float string read from XML
+   */
   public static String formatNumberWithDecimals(Locale locale, String stringToFormat, int minimalNumberOfDecimals,
                                                 int maximumNumberOfDecimals)
   {
@@ -167,8 +229,15 @@ public final class StringUtil
     return result;
   }
 
-  // returns a string formatted as a price with two decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen
+  /**
+   * Format {@link String} like a price with two decimals
+   *  
+   * WARNING: Only use this method to present data to the screen
+   * 
+   * @param locale {@link Locale}
+   * @param stringToFormat {@link String} to format
+   * @return a {@link String} formatted as a price with two decimals assuming the receiver is a float string read from XML
+   */
   public static String formatPriceWithTwoDecimals(Locale locale, String stringToFormat)
   {
     if (stringToFormat == null || stringToFormat.length() == 0)
@@ -191,24 +260,47 @@ public final class StringUtil
     return formatNumberWithDecimals(locale, stringToFormat, 2);
   }
 
-  public static String formatPriceWithTwoDecimals(Locale locale, double toFormat)
+  /**
+   * Format {@link String} like a price with two decimals
+   *  
+   * WARNING: Only use this method to present data to the screen
+   * 
+   * @param locale {@link Locale}
+   * @param doubleToFormat double to format
+   * @return a {@link String} formatted as a price with two decimals assuming the receiver is a float string read from XML
+   */
+  public static String formatPriceWithTwoDecimals(Locale locale, double doubleToFormat)
   {
     DecimalFormat formatter = new DecimalFormat();
     setupFormatter(formatter, locale, 2);
 
-    return formatter.format(toFormat);
+    return formatter.format(doubleToFormat);
   }
 
-  // returns a string formatted as a price with three decimals assuming the receiver is a float string read from XML
-  // WARNING: Only use this method to present data to the screen
   // TODO why is this method not doing anything with the currency sign?
+  /**
+   * Format {@link String} like a price with three decimals
+   *  
+   * WARNING: Only use this method to present data to the screen
+   * 
+   * @param locale {@link Locale}
+   * @param stringToFormat {@link String} to format
+   * @return a {@link String} formatted as a price with three decimals assuming the receiver is a float string read from XML
+   */
   public static String formatPriceWithThreeDecimals(Locale locale, String stringToFormat)
   {
     return formatNumberWithDecimals(locale, stringToFormat, 3);
   }
 
-  // returns a string formatted as a volume with group separators (eg, 131.224.000) assuming the receiver is an int string read from XML
-  // WARNING: Only use this method to present data to the screen
+  /**
+   * Format {@link String} as a Volume
+   *  
+   * WARNING: Only use this method to present data to the screen
+   * 
+   * @param locale {@link Locale}
+   * @param stringToFormat  {@link String} to format
+   * @return a string formatted as a volume with group separators (eg, 131.224.000) assuming the receiver is an int string read from XML
+   */
   public static String formatVolume(Locale locale, String stringToFormat)
   {
     if (stringToFormat == null || stringToFormat.length() == 0)
@@ -231,8 +323,12 @@ public final class StringUtil
   }
 
   /**
-   * returns a string formatted as a percentage with two decimals assuming the receiver is a float string read from XML
+   * Format {@link String} to a percentage with two decimals.
    * the receiver's value should be "as displayed", eg for 30%, the receiver should be 30, not 0.3 
+   *
+   * @param locale {@link Locale}
+   * @param stringToFormat {@link String} to format
+   * @return a string formatted as a percentage with two decimals assuming the receiver is a float string read from XML
    */
   public static String formatPercentageWithTwoDecimals(Locale locale, String stringToFormat)
   {
@@ -240,14 +336,25 @@ public final class StringUtil
   }
 
   /**
-   * returns a string formatted as a percentage with two decimals assuming the receiver is a float string read from XML
+   * Format double to a percentage with two decimals.
    * the receiver's value should be "as displayed", eg for 30%, the receiver should be 30, not 0.3 
+   */
+  /**
+   * @param locale {@link Locale}
+   * @param doubleToFormat double to format
+   * @return a string formatted as a percentage with two decimals assuming the receiver is a float string read from XML
    */
   public static String formatPercentageWithTwoDecimals(Locale locale, double doubleToFormat)
   {
     return formatPriceWithTwoDecimals(locale, doubleToFormat) + "%";
   }
 
+  /**
+   * Has a {@link String}
+   * 
+   * @param stringToHash {@link String} to hash
+   * @return Hashed {@link String}
+   */
   public static String md5(String stringToHash)
   {
     MessageDigest digest = null;
@@ -266,6 +373,12 @@ public final class StringUtil
     return null;
   }
 
+  /**
+   * Strip a {@link String} by removing HTML elements
+   * 
+   * @param textToStrip {@link String} to strip
+   * @return stripped {@link String}
+   */
   public static String stripHTMLTags(String textToStrip)
   {
 
@@ -298,6 +411,9 @@ public final class StringUtil
 
   /**
    * Capitalizes every word in str 
+   *
+   * @param str {@link String}
+   * @return Capitalizes {@link String}
    */
   public static String capitalize(String str)
   {
@@ -451,6 +567,7 @@ public final class StringUtil
   }
 
   /**
+   * Get {@link Double} value
    * @param value value
    * @return double value
    */
@@ -464,7 +581,9 @@ public final class StringUtil
     return Double.parseDouble(value.replaceAll(",", "."));
   }
 
-  // Source: http://www.javapractices.com/topic/TopicAction.do?Id=96
+  /**
+   * See:  http://www.javapractices.com/topic/TopicAction.do?Id=96
+   */
   public static String escapeHtml(String html)
   {
     final StringBuilder escapedHtml = new StringBuilder();
@@ -548,6 +667,12 @@ public final class StringUtil
     return null;
   }
 
+  /**
+   * Check a {@link String} with a pattern
+   * @param pattern pattern
+   * @param value value
+   * @return true if {@link String} is valid by the pattern
+   */
   public static boolean checkPattern(String pattern, String value)
   {
     Pattern p = Pattern.compile(pattern);

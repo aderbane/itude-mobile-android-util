@@ -20,17 +20,25 @@ import android.graphics.drawable.shapes.RoundRectShape;
 import android.view.View;
 
 /**
- * Wiebe
- *
+ * Utility class for methods to handle UI.
  */
 public final class UIUtil
 {
 
+  /**
+   * Default constructor
+   */
   private UIUtil()
   {
-
   }
 
+  /**
+   * Make the View have rounded corners
+   * 
+   * @param view {@link View}
+   * @param radius radius
+   * @param color color
+   */
   public static void makeRoundedView(View view, int radius, int color)
   {
     float[] corner = new float[]{radius, radius, radius, radius, radius, radius, radius, radius};
