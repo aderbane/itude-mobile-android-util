@@ -28,6 +28,22 @@
 			</roles>
 		</developer>
 		<developer>
+			<name>Ali Derbane</name>
+			<id>a.derbane</id>
+			<roles>
+				<role>Developer</role>
+				<role>Contributor</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Pjotter Tommassen</name>
+			<id>p.tommassen</id>
+			<roles>
+				<role>Developer</role>
+				<role>Contributor</role>
+			</roles>
+		</developer>
+		<developer>
 			<name>Wiebe Elsinga</name>
 			<id>w.elsinga</id>
 			<roles>
