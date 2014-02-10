@@ -20,7 +20,7 @@ import junit.framework.TestSuite;
 import android.test.suitebuilder.TestSuiteBuilder;
 
 /**
-* A test suite containing all tests for MorseFlash.
+* A test suite
 */
 public class AllTests extends TestSuite
 {
