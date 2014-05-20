@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.itude.mobile.android.util</groupId>
 	<artifactId>android-util</artifactId>
-	<version>0.2.0.2-SNAPSHOT</version>
+	<version>0.2.0.2</version>
 	<packaging>pom</packaging>
 	<name>Itude Mobile Android Util</name>
 	<description>Itude Mobile Android Util</description>
@@ -87,7 +87,8 @@
 		<url>https://github.com/ItudeMobile/itude-mobile-android-util</url>
 		<connection>scm:git:git://github.com/ItudeMobile/itude-mobile-android-util.git</connection>
 		<developerConnection>scm:git:git@github.com:ItudeMobile/itude-mobile-android-util.git</developerConnection>
-	</scm>
+	  <tag>android-util-0.2.0.2</tag>
+  </scm>
 	
 	<build>
         <pluginManagement>
