@@ -8,7 +8,7 @@
 		<version>0.2.0.3-SNAPSHOT</version>
 	</parent>
 	<artifactId>android-util-lib</artifactId>
-	<packaging>apklib</packaging>
+	<packaging>aar</packaging>
 	<name>Itude Mobile Android Util Library</name>
 	<description>Itude Mobile Android Util Library</description>
 		<url>http://www.itude.com/</url>
@@ -78,8 +78,7 @@
 		<url>https://github.com/ItudeMobile/itude-mobile-android-util/android-util-lib</url>
 		<connection>scm:git:git://github.com/ItudeMobile/itude-mobile-android-util.git/android-util-lib</connection>
 		<developerConnection>scm:git:git@github.com:ItudeMobile/itude-mobile-android-util.git/android-util-lib</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+	</scm>
  
  	<build>
 		<defaultGoal>install</defaultGoal>
@@ -105,7 +104,7 @@
 											android-maven-plugin
 										</artifactId>
 										<versionRange>
-											[3.9.0-rc.1,)
+											[3.9.0-rc.3,)
 										</versionRange>
 										<goals>
 											<goal>proguard</goal>
