@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.itude.mobile.android.util</groupId>
 		<artifactId>android-util</artifactId>
-		<version>0.2.0.3-SNAPSHOT</version>
+		<version>0.2.0.3</version>
 	</parent>
 	<artifactId>android-util-lib</artifactId>
 	<packaging>aar</packaging>
@@ -78,7 +78,8 @@
 		<url>https://github.com/ItudeMobile/itude-mobile-android-util/android-util-lib</url>
 		<connection>scm:git:git://github.com/ItudeMobile/itude-mobile-android-util.git/android-util-lib</connection>
 		<developerConnection>scm:git:git@github.com:ItudeMobile/itude-mobile-android-util.git/android-util-lib</developerConnection>
-	</scm>
+	  <tag>android-util-0.2.0.3</tag>
+  </scm>
  
  	<build>
 		<defaultGoal>install</defaultGoal>
