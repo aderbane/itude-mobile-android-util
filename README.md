@@ -3,7 +3,7 @@
 Library containing utility Classes that are useful when developing for Android.
 
 ## [Changelog](https://github.com/ItudeMobile/itude-mobile-android-util/wiki/Changelog)
-Current version: 0.2.0.3
+Current version: 0.2.0.4
 
 ## Build
 #### Maven
