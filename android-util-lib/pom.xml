@@ -78,8 +78,7 @@
 		<url>https://github.com/ItudeMobile/itude-mobile-android-util/android-util-lib</url>
 		<connection>scm:git:git://github.com/ItudeMobile/itude-mobile-android-util.git/android-util-lib</connection>
 		<developerConnection>scm:git:git@github.com:ItudeMobile/itude-mobile-android-util.git/android-util-lib</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+	</scm>
  
  	<build>
 		<defaultGoal>install</defaultGoal>

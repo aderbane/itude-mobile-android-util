@@ -87,7 +87,6 @@
 		<url>https://github.com/ItudeMobile/itude-mobile-android-util</url>
 		<connection>scm:git:git://github.com/ItudeMobile/itude-mobile-android-util.git</connection>
 		<developerConnection>scm:git:git@github.com:ItudeMobile/itude-mobile-android-util.git</developerConnection>
-	  <tag>HEAD</tag>
   </scm>
 	
 	<build>
