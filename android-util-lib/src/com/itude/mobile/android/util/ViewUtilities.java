@@ -48,4 +48,20 @@ public final class ViewUtilities
     return view;
   }
 
+  public static void replaceView(View original, View replacement)
+  {
+    ViewGroup parent = (ViewGroup) original.getParent();
+    replacement.setLayoutParams(original.getLayoutParams());
+
+    if (replacement.getId() == View.NO_ID) replacement.setId(original.getId());
+
+    // find out the index of original
+    int index = 0;
+    for (index = 0; index < parent.getChildCount(); ++index)
+      if (parent.getChildAt(index) == original) break;
+
+    parent.removeViewAt(index);
+    parent.addView(replacement, index);
+
+  }
 }
