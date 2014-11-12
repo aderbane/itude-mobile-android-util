@@ -22,9 +22,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import android.util.Log;
-
 import com.itude.mobile.android.util.exceptions.DateParsingException;
+import com.itude.mobile.android.util.log.MBLog;
 
 /**
  * Utility class for methods to handle data.
@@ -327,7 +326,7 @@ public final class DateUtil
       }
       catch (ParseException e)
       {
-        Log.e(TAG, "Couldn't parse date/time value" + time, e);
+        MBLog.e(TAG, "Couldn't parse date/time value" + time, e);
       }
     }
   }

@@ -26,7 +26,8 @@ import java.util.zip.Inflater;
 import org.apache.commons.codec.binary.Base64;
 
 import android.content.Context;
-import android.util.Log;
+
+import com.itude.mobile.android.util.log.MBLog;
 
 /**
  * Utility class for methods to handle data.
@@ -111,7 +112,7 @@ public final class DataUtil
         _filenameToReader.put(filename, _readerNone);
         // and only the first time we give a message
         String message = "DataUtil.readFromAssetOrFile: unable to read file or asset data from file with name " + filename;
-        Log.i(TAG, message);
+        MBLog.i(TAG, message);
       }
       else
       {
@@ -158,7 +159,7 @@ public final class DataUtil
     }
     catch (IOException e)
     {
-      Log.w(TAG, "Unable to close stream");
+      MBLog.w(TAG, "Unable to close stream");
     }
 
     // Get the compressed data 
@@ -209,7 +210,7 @@ public final class DataUtil
     }
     catch (IOException e)
     {
-      Log.w(TAG, "Unable to close stream");
+      MBLog.w(TAG, "Unable to close stream");
     }
 
     // Get the decompressed data 

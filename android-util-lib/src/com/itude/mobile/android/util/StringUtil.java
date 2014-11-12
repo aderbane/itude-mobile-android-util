@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.codec.binary.Hex;
 
-import android.util.Log;
+import com.itude.mobile.android.util.log.MBLog;
 
 /**
  * Utility class for methods to handle math.
@@ -153,7 +153,7 @@ public final class StringUtil
     }
     catch (Exception e)
     {
-      Log.w(TAG, "Could not format string " + stringToFormat + " as number with original number of decimals (StringUtilities)", e);
+      MBLog.w(TAG, "Could not format string " + stringToFormat + " as number with original number of decimals (StringUtilities)", e);
 
       return null;
     }
@@ -367,7 +367,7 @@ public final class StringUtil
     }
     catch (Exception e)
     {
-      Log.w(TAG, "Could not create hash of following string: " + stringToHash);
+      MBLog.w(TAG, "Could not create hash of following string: " + stringToHash);
     }
 
     return null;
