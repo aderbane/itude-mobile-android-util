@@ -20,9 +20,9 @@ import java.io.InputStream;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.util.Log;
 
 import com.itude.mobile.android.util.exceptions.DataParsingException;
+import com.itude.mobile.android.util.log.MBLog;
 
 /**
  * Utility class for methods to handle assets.
@@ -106,7 +106,7 @@ public final class AssetUtil
       }
       catch (Exception e)
       {
-        Log.w(TAG, "Unable to close stream", e);
+        MBLog.w(TAG, "Unable to close stream", e);
       }
 
       try
@@ -115,11 +115,11 @@ public final class AssetUtil
       }
       catch (Exception e)
       {
-        Log.w(TAG, "Unable to close stream");
+        MBLog.w(TAG, "Unable to close stream");
       }
     }
 
-    if (bytes.toByteArray().length == 0) Log.w(TAG, "AssetUtil.getByteArray: file not found with fileName=");
+    if (bytes.toByteArray().length == 0) MBLog.w(TAG, "AssetUtil.getByteArray: file not found with fileName=");
     return bytes.toByteArray();
   }
 

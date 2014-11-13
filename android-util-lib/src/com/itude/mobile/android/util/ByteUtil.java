@@ -17,7 +17,7 @@ package com.itude.mobile.android.util;
 
 import java.io.UnsupportedEncodingException;
 
-import android.util.Log;
+import com.itude.mobile.android.util.log.MBLog;
 
 /**
  * Utility class for methods to handle bytes.
@@ -51,7 +51,7 @@ public final class ByteUtil
     }
     catch (UnsupportedEncodingException e)
     {
-      Log.w(TAG, "unable is encode bytes with type " + encodingType);
+      MBLog.w(TAG, "unable is encode bytes with type " + encodingType);
     }
     return str.getBytes();
   }
@@ -73,7 +73,7 @@ public final class ByteUtil
     }
     catch (UnsupportedEncodingException e)
     {
-      Log.w(TAG, "unable is encode bytes with type " + encodingType);
+      MBLog.w(TAG, "unable is encode bytes with type " + encodingType);
     }
     return result.getBytes();
   }
@@ -95,7 +95,7 @@ public final class ByteUtil
     }
     catch (UnsupportedEncodingException e)
     {
-      Log.w(TAG, "unable is encode bytes with type " + encodingType);
+      MBLog.w(TAG, "unable is encode bytes with type " + encodingType);
     }
     return result;
   }
