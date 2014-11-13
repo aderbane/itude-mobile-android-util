@@ -27,9 +27,9 @@ import java.io.ObjectOutputStream;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.util.Log;
 
 import com.itude.mobile.android.util.exceptions.DataParsingException;
+import com.itude.mobile.android.util.log.MBLog;
 
 /**
  * Utility class for methods to handle files.
@@ -83,7 +83,7 @@ public final class FileUtil
     try
     {
       File root = _context.getFilesDir();
-      Log.d(TAG, "FileUtil.getByteArray: reading from file " + fileName);
+      MBLog.d(TAG, "FileUtil.getByteArray: reading from file " + fileName);
       int read;
       byte[] buffer = new byte[1024];
       File file = new File(root, fileName);
@@ -108,7 +108,7 @@ public final class FileUtil
       }
       catch (Exception e)
       {
-        Log.w(TAG, "Unable to close stream");
+        MBLog.w(TAG, "Unable to close stream");
       }
     }
     return bytes.toByteArray();
@@ -131,13 +131,13 @@ public final class FileUtil
     try
     {
       File root = _context.getFilesDir();
-      Log.d(TAG, "FileUtil.writeToFile: writing to file " + fileName);
+      MBLog.d(TAG, "FileUtil.writeToFile: writing to file " + fileName);
 
       int lastPathSeparator = fileName.lastIndexOf(File.separator);
       if (lastPathSeparator > -1)
       {
         String directoryName = fileName.substring(0, lastPathSeparator);
-        Log.d(TAG, "FileUtil.writeToFile: creating directory " + directoryName);
+        MBLog.d(TAG, "FileUtil.writeToFile: creating directory " + directoryName);
         File dir = new File(root, directoryName);
         dir.mkdirs();
       }
@@ -150,7 +150,7 @@ public final class FileUtil
     }
     catch (Exception e)
     {
-      Log.w(TAG, "FileUtil.writeToFile: error writing file " + fileName, e);
+      MBLog.w(TAG, "FileUtil.writeToFile: error writing file " + fileName, e);
     }
     finally
     {
@@ -160,7 +160,7 @@ public final class FileUtil
       }
       catch (Exception e)
       {
-        Log.w(TAG, "Unable to close stream", e);
+        MBLog.w(TAG, "Unable to close stream", e);
       }
     }
 
@@ -191,7 +191,7 @@ public final class FileUtil
     }
     catch (Exception e)
     {
-      Log.w(TAG, "Failed to serialize object, or to write to file", e);
+      MBLog.w(TAG, "Failed to serialize object, or to write to file", e);
     }
     finally
     {
@@ -202,7 +202,7 @@ public final class FileUtil
       }
       catch (Exception e)
       {
-        Log.w(TAG, "Unable to close streams", e);
+        MBLog.w(TAG, "Unable to close streams", e);
       }
     }
     return success;
@@ -228,7 +228,7 @@ public final class FileUtil
     }
     catch (Exception e)
     {
-      Log.w(TAG, "Failed to read from file, or to deserialize", e);
+      MBLog.w(TAG, "Failed to read from file, or to deserialize", e);
     }
     finally
     {
@@ -239,7 +239,7 @@ public final class FileUtil
       }
       catch (Exception e)
       {
-        Log.w(TAG, "Unable to close streams", e);
+        MBLog.w(TAG, "Unable to close streams", e);
       }
     }
     return result;
@@ -258,7 +258,7 @@ public final class FileUtil
     try
     {
       File root = _context.getFilesDir();
-      Log.d(TAG, "FileUtil.remove: removing file " + fileName);
+      MBLog.d(TAG, "FileUtil.remove: removing file " + fileName);
 
       File file = new File(root, fileName);
 
@@ -269,14 +269,14 @@ public final class FileUtil
       }
       else
       {
-        if (!file.exists()) Log.w(TAG, "FileUtil.remove: Could not remove file because it doesn't exist");
-        else if (!file.isFile()) Log.w(TAG, "FileUtil.remove: Could not remove file because it is not a file");
+        if (!file.exists()) MBLog.w(TAG, "FileUtil.remove: Could not remove file because it doesn't exist");
+        else if (!file.isFile()) MBLog.w(TAG, "FileUtil.remove: Could not remove file because it is not a file");
       }
 
     }
     catch (Exception e)
     {
-      Log.w(TAG, "FileUtil.remove: error removing file " + fileName, e);
+      MBLog.w(TAG, "FileUtil.remove: error removing file " + fileName, e);
     }
 
     return success;
@@ -307,7 +307,7 @@ public final class FileUtil
     }
     catch (IOException e)
     {
-      Log.e(TAG, e.getMessage(), e);
+      MBLog.e(TAG, e.getMessage(), e);
     }
 
     return bytes.toString();

@@ -75,6 +75,19 @@
             <modules>
                 <module>android-util-lib</module>
             </modules>
+            
+            <build>
+				<plugins>
+					<plugin>
+						<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+						<artifactId>android-maven-plugin</artifactId>
+						<inherited>true</inherited>
+						<configuration>
+						    <release>true</release>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
         </profile>
     </profiles>
    
